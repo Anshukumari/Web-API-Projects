@@ -10,6 +10,7 @@ namespace WebTokenAuthentication.Controllers
 {
     public class UserController : ApiController
     {
+        /* No Authentication */
         [AllowAnonymous]
         [HttpGet]
         [Route("api/data/forall")]
@@ -17,6 +18,7 @@ namespace WebTokenAuthentication.Controllers
         {
             return Ok("Now server time is:"+DateTime.Now.ToString());
         }
+        /* Authentication */
         [Authorize]
         [HttpGet]
         [Route("api/data/authenticate")]
